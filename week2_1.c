@@ -1,8 +1,9 @@
-#<include stdio.h>
+#include <stdio.h>
 
 int main() {
-    int hour1=0, hour1=0, min1=0, min0=0;
-    int d;
+    int hour1=0, hour0=0, min1=0, min0=0;
+    int d, hour, result;
+    
     scanf("%d", &d);
     
     if ( d > 0 ) {
@@ -32,7 +33,7 @@ int main() {
     hour1 = hour / 10;
     hour0 = hour % 10;
     
-    result = hour1 * 1000 + hour0 * 100 + min1 * 10 + min0 * 10;
+    result = hour1 * 1000 + hour0 * 100 + min1 * 10 + min0;
     printf("%d", result);
     return 0;
 }
