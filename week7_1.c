@@ -22,12 +22,31 @@ int main() {
         scanf("%d %d", &pow, &factor);
         if ( factor == 0)
             continue;
-        b[i][0] = pow;
-        b[i][1] = factor;
-        i++;
+        b[j][0] = pow;
+        b[j][1] = factor;
+        j++;
     } while ( pow > 0)
 
     // printf("Nonzero in a = %d\n", nonzero);
+    for ( m = 0, n = 0; ( m < i ) & ( n < j ); ) {
+        if ( a[m][0] > b[n][0] ) {
+            printf("%dx%d", a[m][1], a[m][0]);
+            m++;
+        }
+        else if ( a[m][0] < b[n][0] ) {
+            printf("%dx%d", b[n][1], b[n][0]);
+            n++;
+        }
+        else {
+            printf("%dx%d", b[n][1] + a[m][1], b[m][0]);
+            m++;
+            n++;
+        }
+        if ( ( m < i ) & ( n < j ) ) {
+            printf("+");
+        }
+    }
+
 
     return 0;
 }
